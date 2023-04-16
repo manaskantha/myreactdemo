@@ -13,11 +13,8 @@ export default function Greeting() {
           id="firstName"
         />
         <br />
-        {firstName ? (
-          <strong></strong>
-        ) : (
-          "Please type your first name"
-        )}
+        {firstName ? <strong></strong> : "Please type your first name"}
+        <br />
         <br />
         <label htmlFor="lastName">Your Last Name: </label>
         <input
@@ -27,7 +24,9 @@ export default function Greeting() {
       </form>
 
       {firstName && lastName ? (
-        <strong>Hello {firstName} {lastName}</strong>
+        <strong>
+          Hello {firstName} {lastName}
+        </strong>
       ) : (
         "Please type your last name"
       )}
