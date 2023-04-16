@@ -1,4 +1,5 @@
 import "./styles.css";
+import { PropTypes } from "prop-types";
 
 export default function SayHello({firstName, lastName}){
     return (
