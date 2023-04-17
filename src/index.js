@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import SayHello from "./SayHello";
 import Greeting from "./UserForm";
+import MainApp from "./UseEffect";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -14,5 +15,7 @@ root.render(
     <SayHello firstName={"Stranger"} />
     <br />
     <Greeting />
+    <br />
+    <MainApp />
   </StrictMode>
 );

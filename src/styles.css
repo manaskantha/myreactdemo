@@ -2,3 +2,11 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.Count {
+  padding: 10;
+  margin: 10;
+  height: 30;
+  width: 30;
+  border: "solid";
+}
