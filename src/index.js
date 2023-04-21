@@ -9,11 +9,15 @@ import MainApp from "./UseEffect";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
+const element = <Greeting />;
+//element.props.firstName
+console.log(element);
+
 root.render(
   <StrictMode>
     <App />
-    <SayHello firstName={"Stranger"} />
     <br />
+    <SayHello />
     <Greeting />
     <br />
     <MainApp />

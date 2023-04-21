@@ -1,10 +1,13 @@
 import "./styles.css";
 import React, { useState } from "react";
+import SayHello from "./SayHello";
 
 function handleSubmit(event) {
   event.preventDefault();
-  const username = event.target.elements.firstName.value;
-  const message = username ? "Submitted successfully" : "Invalid Input";
+  const firstName = event.target.elements.firstName.value;
+  const lastName = event.target.elements.lastName.value;
+  const message =
+    firstName && lastName ? "Submitted successfully" : "Invalid Input";
   alert(message);
 }
 
@@ -12,7 +15,7 @@ export default function Greeting() {
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
-  return (
+  const value = (
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">Your First Name: </label>
@@ -51,8 +54,22 @@ export default function Greeting() {
         <br />
         {dob ? <strong>Your date of birth is: {dob}</strong> : ""}
         <br />
-        <button type="submit">Submit Form</button>
+        <button type="submit" className="btn success">
+          Submit Form
+        </button>
       </form>
     </div>
   );
+
+  React.useEffect(() => {
+    SayHello({ firstName, lastName });
+  }, [firstName]);
+
+  return value;
+}
+
+export function ExportNames({ firstName, lastName }) {
+  React.useEffect(() => {
+    <SayHello firstName={firstName} lastName={lastName} />;
+  }, [firstName]);
 }
