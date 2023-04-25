@@ -20,6 +20,5 @@ root.render(
     <SayHello />
     <Greeting />
     <br />
-    <MainApp />
   </StrictMode>
 );

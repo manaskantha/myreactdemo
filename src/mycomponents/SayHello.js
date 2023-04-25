@@ -2,11 +2,13 @@ import "./styles.css";
 import React from "react";
 import { PropTypes } from "prop-types";
 
-export default function SayHello({ firstName, lastName }) {
-  const message = firstName ? firstName : "Stranger";
+export default function SayHello(props) {
+  const message = props.firstName
+    ? props.firstName
+    : "Please enter your details";
   return (
     <div>
-      <h3>Please enter your details:</h3>
+      <h3>{message} </h3>
       {/* <p>{message}</p> */}
     </div>
   );
