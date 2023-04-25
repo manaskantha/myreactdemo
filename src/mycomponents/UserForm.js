@@ -1,11 +1,13 @@
 import "./styles.css";
 import React, { useState } from "react";
 import SayHello from "./SayHello";
+import MainApp from "./UseEffect";
 
 function handleSubmit(event) {
   event.preventDefault();
-  const firstName = event.target.elements.firstName.value;
-  const lastName = event.target.elements.lastName.value;
+  console.log(event);
+  const firstName = event.target.form.firstName.value;
+  const lastName = event.target.form.lastName.value;
   const message =
     firstName && lastName ? "Submitted successfully" : "Invalid Input";
   alert(message);
@@ -17,7 +19,7 @@ export default function Greeting() {
   const [dob, setDob] = React.useState("");
   const value = (
     <div className="userForm">
-      <form onSubmit={handleSubmit}>
+      <form>
         <label htmlFor="firstName">Your First Name: </label>
         <input
           type="text"
@@ -57,7 +59,9 @@ export default function Greeting() {
         <br />
         {dob ? <strong>Your date of birth is: {dob}</strong> : ""}
         <br />
-        <button type="submit" className="btn success">
+        <MainApp />
+        <br />
+        <button type="submit" onClick={handleSubmit} className="btn success">
           Submit Form
         </button>
       </form>

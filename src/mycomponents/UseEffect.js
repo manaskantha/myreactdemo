@@ -38,12 +38,15 @@ function Child() {
   }, [count]);
 
   const element = (
-    <button
-      onClick={() => setCount((previousCount) => previousCount + 1)}
-      className="Count"
-    >
-      {count}
-    </button>
+    <>
+      <label>Click to refresh </label>
+      <button
+        onClick={() => setCount((previousCount) => previousCount + 1)}
+        className="Count"
+      >
+        {count}
+      </button>
+    </>
   );
 
   console.log("%c    Child: render end", "color: MediumSpringGreen");
@@ -93,7 +96,7 @@ export default function MainApp() {
           checked={showChild}
           onChange={(e) => setShowChild(e.target.checked)}
         />{" "}
-        Want to count something ?
+        Want to refresh page ?
       </label>
       <div>{showChild ? <Child /> : null}</div>
     </>
