@@ -16,12 +16,14 @@ export default function Greeting() {
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
   const value = (
-    <div>
+    <div className="userForm">
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">Your First Name: </label>
         <input
+          type="text"
           onChange={() => setFirstName(window.event.target.value)}
           id="firstName"
+          styles="input"
         />
         <br />
         {firstName ? <strong></strong> : "Please type your first name"}
@@ -29,6 +31,7 @@ export default function Greeting() {
         <br />
         <label htmlFor="lastName">Your Last Name: </label>
         <input
+          type="text"
           onChange={() => setLastName(window.event.target.value)}
           id="lastName"
         />

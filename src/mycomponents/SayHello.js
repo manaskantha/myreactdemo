@@ -6,8 +6,8 @@ export default function SayHello({ firstName, lastName }) {
   const message = firstName ? firstName : "Stranger";
   return (
     <div>
-      <h3>Hello:</h3>
-      <p>{message}</p>
+      <h3>Please enter your details:</h3>
+      {/* <p>{message}</p> */}
     </div>
   );
 }
