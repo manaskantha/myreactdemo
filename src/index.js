@@ -5,6 +5,7 @@ import App from "./App";
 import SayHello from "./mycomponents/SayHello";
 import Greeting from "./mycomponents/UserForm";
 import MainApp from "./mycomponents/UseEffect";
+import GetMovies from "./mycomponents/FetchMovies";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -20,5 +21,6 @@ root.render(
     <SayHello />
     <Greeting />
     <br />
+    <GetMovies />
   </StrictMode>
 );
