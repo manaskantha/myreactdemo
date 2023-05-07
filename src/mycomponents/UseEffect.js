@@ -96,7 +96,7 @@ export default function MainApp() {
           checked={showChild}
           onChange={(e) => setShowChild(e.target.checked)}
         />{" "}
-        Want to refresh page ?
+        Want to count ?
       </label>
       <div>{showChild ? <Child /> : null}</div>
     </>
