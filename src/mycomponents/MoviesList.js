@@ -1,13 +1,13 @@
 import React from "react";
+import "./moviecard.css";
 
 export default function MoviesList(props) {
-  console.log("inside movie list");
-  console.log(props);
-  return (
-    <ul>
-      <h2>{props.title}</h2>
-      <h3>{props.releaseDate}</h3>
-      <p>{props.openingText}</p>
-    </ul>
-  );
+  const Movies = props.MoviesList.map((items) => (
+    <li className="movie-card">
+      <h2>{items.title}</h2>
+      <h3>{items.releaseDate}</h3>
+      <p>{items.openingText}</p>
+    </li>
+  ));
+  return <ul>{Movies}</ul>;
 }

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import MoviesList from "./MoviesList";
 
 export default function GetMovies() {
-  const [movies, setMovies] = React.useState([]);
+  const [movies, setMovies] = useState([]);
   function FetchMoviesHandler() {
     fetch("https://swapi.dev/api/films")
       .then((response) => {
@@ -17,14 +17,13 @@ export default function GetMovies() {
             releaseDate: movieData.release_date,
           };
         });
-        console.log(transformedData);
         setMovies(transformedData);
       });
   }
   return (
     <React.Fragment>
       <section>
-        <button onClick={FetchMoviesHandler}>Fetch Movies</button>
+        <button onClick={FetchMoviesHandler}>Get Star Wars Movies</button>
       </section>
       <section>
         <MoviesList MoviesList={movies} />
