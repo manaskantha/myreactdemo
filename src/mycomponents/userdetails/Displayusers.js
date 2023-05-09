@@ -23,6 +23,7 @@ const UserDetails = (props) => {
             firstName={userdetails.firstName}
             lastName={userdetails.lastName}
             dateOfBirth={userdetails.dob}
+            gender={userdetails.gender}
           />
         ))}
       </Card>

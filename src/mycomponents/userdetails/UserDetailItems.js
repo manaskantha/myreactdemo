@@ -13,6 +13,10 @@ const UserDetailItem = (props) => {
         <h2>{props.lastName}</h2>
         {/* <div className="user-item__price">${props.amount}</div> */}
       </div>
+      <div className="userdob-gender">
+        <h2>Gender</h2>
+        <h2>{props.gender}</h2>
+      </div>
     </Card>
   );
 };

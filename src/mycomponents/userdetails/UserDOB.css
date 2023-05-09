@@ -16,6 +16,11 @@
   font-weight: bold;
 }
 
+.userdob-text {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
 .userdob-date__year {
   font-size: 0.75rem;
 }
