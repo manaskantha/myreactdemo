@@ -6,19 +6,19 @@ export default function BasicUserDetails(props) {
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
-  const handleSubmit = (event) =>{
-      event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.log(event);
     const userData = {
-        firstName: firstName,
-        lastName: lastName,
-        dob: dob,
-     };
-  props.onBasicFormSubmit(userData);
+      firstName: firstName,
+      lastName: lastName,
+      dob: dob,
+    };
+    props.onBasicFormSubmit(userData);
     const message =
-        firstName && lastName ? "Submitted successfully" : "Invalid Input";
+      firstName && lastName ? "Submitted successfully" : "Invalid Input";
     alert(message);
-   };
+  };
   const value = (
     <div className="userForm">
       <form>
