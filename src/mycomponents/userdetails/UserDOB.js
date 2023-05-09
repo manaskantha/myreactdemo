@@ -9,9 +9,10 @@ const UserDOBDate = (props) => {
 
   return (
     <div className="userdob-date">
+      <p className="userdob-text">DOB</p>
+      <div className="userdob-date__day">{day}</div>
       <div className="userdob-date__month">{month}</div>
       <div className="userdob-date__year">{year}</div>
-      <div className="userdob-date__day">{day}</div>
     </div>
   );
 };

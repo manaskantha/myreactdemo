@@ -1,4 +1,5 @@
 import "./styles.css";
+import "./Selection.css";
 import React, { useState } from "react";
 import SayHello from "./SayHello";
 
@@ -6,6 +7,7 @@ export default function BasicUserDetails(props) {
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [dob, setDob] = React.useState("");
+  const [gender, setGender] = React.useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(event);
@@ -13,6 +15,7 @@ export default function BasicUserDetails(props) {
       firstName: firstName,
       lastName: lastName,
       dob: dob,
+      gender: gender,
     };
     props.onBasicFormSubmit(userData);
     const message =
@@ -60,6 +63,19 @@ export default function BasicUserDetails(props) {
         )}
         <br />
         {dob ? <strong>Your date of birth is: {dob}</strong> : ""}
+        <br />
+        <label htmlFor="gender">Gender: </label>
+        <select
+          name="gender"
+          id="gender"
+          className="select"
+          onChange={() => setGender(window.event.target.value)}
+        >
+          <option value="select">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
         <br />
         <br />
         <button type="submit" onClick={handleSubmit} className="btn success">

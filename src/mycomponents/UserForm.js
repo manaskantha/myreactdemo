@@ -10,11 +10,13 @@ const DUMMY_USERS = [
     firstName: "Peter",
     lastName: "Jones",
     dob: new Date(1994, 7, 14),
+    gender: "Male",
   },
   {
     firstName: "Sam",
     lastName: "Smith",
     dob: new Date(1988, 5, 11),
+    gender: "Male",
   },
 ];
 
