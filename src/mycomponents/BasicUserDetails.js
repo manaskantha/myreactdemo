@@ -14,7 +14,7 @@ export default function BasicUserDetails(props) {
     const userData = {
       firstName: firstName,
       lastName: lastName,
-      dob: dob,
+      dob: new Date(dob),
       gender: gender,
     };
     props.onBasicFormSubmit(userData);
@@ -71,10 +71,10 @@ export default function BasicUserDetails(props) {
           className="select"
           onChange={() => setGender(window.event.target.value)}
         >
-          <option value="select">Select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
+          <option value="NA">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
         <br />
         <br />
