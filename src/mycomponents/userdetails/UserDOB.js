@@ -7,6 +7,8 @@ const UserDOBDate = (props) => {
   const day = props.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.date.toLocaleString("en-US", { year: "numeric" });
 
+  //console.log(props.date);
+
   return (
     <div className="userdob-date">
       <p className="userdob-text">DOB</p>
