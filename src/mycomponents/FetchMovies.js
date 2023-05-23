@@ -3,22 +3,28 @@ import MoviesList from "./MoviesList";
 
 export default function GetMovies() {
   const [movies, setMovies] = useState([]);
-  function FetchMoviesHandler() {
-    fetch("https://swapi.dev/api/films")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const transformedData = data.results.map((movieData) => {
-          return {
-            id: movieData.episode_id,
-            title: movieData.title,
-            openingText: movieData.opening_crawl,
-            releaseDate: movieData.release_date,
-          };
-        });
-        setMovies(transformedData);
+  const [error, setError] = useState(null);
+  async function FetchMoviesHandler() {
+    setError(null);
+    try {
+      const response = await fetch("https://swapi.dev/api/films111");
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+      const data = await response.json();
+
+      const transformedData = data.results.map((movieData) => {
+        return {
+          id: movieData.episode_id,
+          title: movieData.title,
+          openingText: movieData.opening_crawl,
+          releaseDate: movieData.release_date,
+        };
       });
+      setMovies(transformedData);
+    } catch (error) {
+      setError(error.message);
+    }
   }
   return (
     <React.Fragment>
@@ -27,6 +33,7 @@ export default function GetMovies() {
       </section>
       <section>
         <MoviesList MoviesList={movies} />
+        {error && <p>{error}</p>}
       </section>
     </React.Fragment>
   );
