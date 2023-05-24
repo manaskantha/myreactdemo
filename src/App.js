@@ -1,5 +1,6 @@
 import "./mycomponents/styles.css";
 import DisplayDate from "./mycomponents/DateHeader";
+import Store from "./reduxlib/Store";
 
 export default function App() {
   const newDate = new Date();
@@ -9,8 +10,10 @@ export default function App() {
       <>
         {/* <span>Please</span> <span>enter your </span>
         <span>details below</span> */}
+        <DisplayDate date={newDate} />
+        
       </>
-      <DisplayDate date={newDate} />
+      {/* <Store /> */}
     </div>
   );
 }
