@@ -5,9 +5,9 @@ const initialState = {
 function addReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT":
-      return { ...state, value: state.value + 1 };
+      return { ...state, value: state.value + action.amount };
     case "DECREMENT":
-      return { ...state, value: state.value - 1 };
+      return { ...state, value: state.value - action.amount };
     default:
       return state;
   }
