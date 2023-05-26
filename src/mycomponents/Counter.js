@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { reducerActions } from "../reduxlib/Reducer";
 
 const Counter = () => {
   //This subscribes to the value object in redux centralized store
@@ -8,11 +9,11 @@ const Counter = () => {
   //This pushes updates to redux store
   const dispatch = useDispatch();
   const incrementHandler = () => {
-    dispatch({ type: "INCREMENT", amount: 1 });
+    dispatch(reducerActions.increase(1));
   };
 
   const decrementHandler = () => {
-    dispatch({ type: "DECREMENT", amount: 1 });
+    dispatch(reducerActions.decrease(1));
   };
 
   return (

@@ -1,7 +1,8 @@
 import { createStore } from "redux";
-import reducers from "./Reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import { counterSlice } from "./Reducer";
 
-const store = createStore(reducers);
+const store = createStore(counterSlice.reducer);
 
 const counterSubscriber = () => {
   const latestState = store.getState();
